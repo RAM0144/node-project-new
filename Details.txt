@@ -1,0 +1,129 @@
+1. Node JS npm project, so we can install external packages
+    1. Create a project for the backend
+    2. npm install <package-name>
+
+2. HTTP Server:
+
+    http --> protocol used to serve files or data via internet
+
+    basic server creation using http create server
+
+    Disadvantages:
+      http: does not provide wide variety of function to support operations like,
+
+        1. body parsing
+        2. changing http methods
+        3. handling middlewares
+        4. proper routing logic is not possible
+
+      We need to manually handle it with a lots of codes
+
+4. Express:
+    APIs using express -
+    why express external module:
+        basic server creation is possible in normal nodejs that involves lot of code with lots of built-in packages
+    
+        Express combines everything and puts together in simple terms
+
+    web framework http server applcation which lets us create APIs
+    in fast and simple ways
+
+    /teachers - CRUD (GET, PUT, POST, DELETE)
+    /students - CRUD (GET, PUT, POST, DELETE)
+
+
+    Router:
+
+      express.Router(); // sample instance of the server
+
+
+
+4.1: POST-Man
+
+    Tool used to access different API Methods like below,
+      1. GET
+      2. POST
+      3. PUT
+      4. DELETE
+
+5. CRUD Operations with APIs
+   CREATE, READ, UPDATE, DELETE
+
+6. URL Params:
+    Path Params: /:id
+
+        id or name is the path variable/param
+      request.params
+
+      param is *id*
+    
+    Query Params: comes after question mark
+      request.query
+      /todos?deleteId=100
+      param is *deleteId*
+
+7. Request is an object with pre-defined key<->value pairs & methods/functions
+
+    express request object is different or customized depending on the requirements
+    used to operate on top of the request in-coming
+
+    Eg: request.body gives the payload, 
+    
+    Below are created by expressjs,
+      req.params['<param-name>'] gives the path param. request.query will give the query param
+
+    reference: https://www.tutorialspoint.com/nodejs/nodejs_request_object.htm
+
+8. Resposne:
+    response is an object with pre-defined key<->value pairs & methods
+    used to operate on top of the response out-going
+
+    Express Created funcs,
+      res.send();
+
+    reference: https://www.tutorialspoint.com/nodejs/nodejs_response_object.htm
+
+9. Deploying a nodejs application using render.com
+      1. Publish codes to Github
+      2. Log in render.com
+      3. New Web Service
+      4. Choose Repo
+      5. Configure proper cmds
+          1. build cmd ---> npm install
+          2. Start Command ---> whatever the script that You want to run
+      6. Deploy ( Watch out for any errors in the deployment process)
+
+
+
+10.                          DB Connection ---> MongoDB 
+
+    Step 1:
+      Connection to a DB
+    Step 2: 
+      Write Queries to do CRUD opertion with DB
+
+    to connect to any DB We need driver setup for any language
+
+    Packages:
+      MongoDB -> Simple Connecting to DB and writing ontop of the database
+    
+11. Converting the Local variable to Local DB
+        local memory storing will loose the data after server restart
+
+        but local DB Data will be persisted locally in the machine - Done
+        
+
+12.                                   Cloud DB:
+      1. Cloud Atlas:
+
+        Signing Up & Creating Cloud DB
+
+        Connecting with Cloud Atlas DB
+      
+        DB Create: 
+          1. Sign up on https://cloud.mongodb.com/
+          2. Cluster Creation
+          3. Database Creation ( Select M0 Free Version & Create )
+          4. Username with Password, Note those details somewhere safe
+          5. Add 0.0.0.0/0 in the network - this open up the db for anybody with username/password to connect to it
+          5. Copy the Connect URL and replace with the local url
